@@ -143,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
                 Object object = mScrap.get(i);
                 Field mScrapHeapField = access(object.getClass(), "mScrapHeap");
                 Field mMaxScrapField = access(object.getClass(), "mMaxScrap");
-                Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType=" + i + ").mMaxScrapField = " + mMaxScrapField.get(object));
+                Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType = " + i + ").mMaxScrapField = " + mMaxScrapField.get(object));
                 ArrayList<RecyclerView.ViewHolder> mScrapHeap = (ArrayList<RecyclerView.ViewHolder>) mScrapHeapField.get(object);
-                Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType=" + i + ").mScrapHeap.size() = " + mScrapHeap.size());
+                Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType = " + i + ").mScrapHeap.size() = " + mScrapHeap.size());
                 logData(mScrapHeap);
             }
         } catch (Exception e) {
