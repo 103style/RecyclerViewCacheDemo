@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDatas() {
         datas = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 50; i++) {
             ItemBean itemBean;
             if (i % 2 == 0) {
                 itemBean = new Item1Bean(String.valueOf(i));
