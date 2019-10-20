@@ -1,17 +1,18 @@
 package com.lxk.recyclerviewcachedemo;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
-/**
- * @author xiaoke.luo@tcl.com 2019/10/16 18:13
- */
 public class ArrayListWrapper<T> extends ArrayList<T> {
+    private static final String TAG = "ArrayListWrapper";
     public int maxSize = 0;
     public boolean canReset = true;
     private int lastSize = 0;
 
     @Override
     public boolean remove(Object o) {
+        Log.e(TAG, "remove: " + o.toString());
         if (size() > maxSize) {
             maxSize = size();
             canReset = false;
@@ -24,6 +25,7 @@ public class ArrayListWrapper<T> extends ArrayList<T> {
 
     @Override
     public boolean add(T t) {
+        Log.e(TAG, "add: " + t.toString());
         if (canReset) {
             if (size() + 1 > lastSize) {
                 maxSize = size() + 1;

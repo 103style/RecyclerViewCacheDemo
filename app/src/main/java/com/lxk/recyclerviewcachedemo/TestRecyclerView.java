@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * @author xiaoke.luo@tcl.com 2019/10/16 18:05
+ * created by 103style  2019/10/19 16:03
  */
 public class TestRecyclerView extends RecyclerView {
     private LayoutListener layoutListener;
