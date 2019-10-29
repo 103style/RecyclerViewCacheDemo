@@ -12,7 +12,7 @@ public class ArrayListWrapper<T> extends ArrayList<T> {
 
     @Override
     public boolean remove(Object o) {
-        Log.e(TAG, "remove: " + o.toString());
+//        Log.e(TAG, "remove: " + o.toString());
         if (size() > maxSize) {
             maxSize = size();
             canReset = false;
@@ -25,7 +25,7 @@ public class ArrayListWrapper<T> extends ArrayList<T> {
 
     @Override
     public boolean add(T t) {
-        Log.e(TAG, "add: " + t.toString());
+//        Log.e(TAG, "add: " + t.toString());
         if (canReset) {
             if (size() + 1 > lastSize) {
                 maxSize = size() + 1;

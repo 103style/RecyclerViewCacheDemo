@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             Field hiddenViewFiled = access(childHelperFiled.get(recyclerView).getClass(), "mHiddenViews");
             List<View> mHiddenViews = (List<View>) hiddenViewFiled.get(childHelperFiled.get(recyclerView));
             Log.e(TAG + time, "ChildHelper.mHiddenViews =" + (mHiddenViews == null ? 0 : mHiddenViews.size()));
-            logViewData("mHiddenViews:",mHiddenViews);
+            logViewData("mHiddenViews:", mHiddenViews);
             Field mLayoutStateField = access(Class.forName(LLM_PKG), "mLayoutState");
             Field mScrapListField = access(mLayoutStateField.get(linearLayoutManager).getClass(), "mScrapList");
             List<RecyclerView.ViewHolder> mScrapList = (List<RecyclerView.ViewHolder>) mScrapListField.get(mLayoutStateField.get(linearLayoutManager));
@@ -124,13 +124,13 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG + time, "Recycler.mViewCacheMax =" + mViewCacheSize);
             ArrayListWrapper<RecyclerView.ViewHolder> mAttached = (ArrayListWrapper<RecyclerView.ViewHolder>) mAttachedScrap.get(recyclerInstance);
             Log.e(TAG + time, "Recycler.mAttachedScrap.size() = " + (mAttached == null ? 0 : mAttached.maxSize));
-            logData("mAttachedScrap:",mAttached);
+            logData("mAttachedScrap:", mAttached);
             ArrayList<RecyclerView.ViewHolder> mChanged = (ArrayList<RecyclerView.ViewHolder>) mChangedScrap.get(recyclerInstance);
             Log.e(TAG + time, "Recycler.mChangedScrap.size() = " + (mChanged == null ? 0 : mChanged.size()));
-            logData("mChangedScrap:",mChanged);
+            logData("mChangedScrap:", mChanged);
             ArrayList<RecyclerView.ViewHolder> mCached = (ArrayList<RecyclerView.ViewHolder>) mCachedViews.get(recyclerInstance);
             Log.e(TAG + time, "Recycler.mCachedViews.size() = " + (mCached == null ? 0 : mCached.size()));
-            logData("mCachedViews:",mCached);
+            logData("mCachedViews:", mCached);
 
             RecyclerView.RecycledViewPool recycledViewPool = (RecyclerView.RecycledViewPool) mRecyclerPool.get(recyclerInstance);
             Class<?> recyclerPoolClass = Class.forName(mRecyclerPool.getType().getName());
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType = " + i + ").mMaxScrapField = " + mMaxScrapField.get(object));
                 ArrayList<RecyclerView.ViewHolder> mScrapHeap = (ArrayList<RecyclerView.ViewHolder>) mScrapHeapField.get(object);
                 Log.e(TAG + time, "RecycledViewPool.mScrap.get(viewType = " + i + ").mScrapHeap.size() = " + mScrapHeap.size());
-                logData("mScrapHeap:",mScrapHeap);
+                logData("mScrapHeap:", mScrapHeap);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void logViewData(String name ,List<View> list) {
+    private void logViewData(String name, List<View> list) {
         if (list == null || list.size() == 0) {
             return;
         }
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void logData(String name ,ArrayList<RecyclerView.ViewHolder> list) {
+    private void logData(String name, ArrayList<RecyclerView.ViewHolder> list) {
         if (list == null || list.size() == 0) {
             return;
         }
